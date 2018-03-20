@@ -1,13 +1,30 @@
 // App.js
-import React, {Component} from 'react';
-import Scene from './Scene'
+import React from 'react';
+import Scene from './Scene';
+import MainMenu from './MainMenu';
+import {Provider, connect} from "react-redux";
+import {bindActionCreators} from 'redux'
 
-class App extends Component
+
+const App = (props) =>
 {
-  render(){ return (
-    <div>
+  return (
+    <div name="MainApp">
+      <MainMenu />
       <Scene />
     </div>
-  );}
-}
-export default App;
+  )
+};
+
+
+const mapStateToProps = (store) =>
+{
+    return {};
+};
+
+const matchDispatchToProps = (dispatch) =>
+{
+    return bindActionCreators({}, dispatch)
+};
+
+export default connect(mapStateToProps, matchDispatchToProps)(App);
