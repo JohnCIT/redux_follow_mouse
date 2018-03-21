@@ -8,14 +8,26 @@ import {bindActionCreators} from 'redux'
  * Draws the scene that we want to manipulate
  * *   
  */
-const MainMenu = ({}) => {
+const MainMenu = (props) => {
+
+    let userName = "user name";
+
+
+    let startButtonClicked = (event) => 
+    {
+        console.log("!!!! in button action")
+    }
 
     return (
       <div className="Main Menu">
         <div>
             Ready to start?
             <br/>
-            <button>
+            <form>
+                First name:<br/>
+                <input type="text" name="firstname" placeholder={userName}/><br/>
+            </form>
+            <button  onClick={startButtonClicked}>
                 Lets start
             </button>
         </div>
