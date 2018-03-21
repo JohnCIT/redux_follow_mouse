@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
+import {mainMenuStart} from '../actions/mainMenuScreenActions'
 
 
 /**
@@ -15,7 +16,9 @@ const MainMenu = (props) => {
 
     let startButtonClicked = (event) => 
     {
-        console.log("!!!! in button action")
+        console.log("!!!! in button action");
+
+        props.mainMenuStart();
     }
 
     return (
@@ -38,14 +41,14 @@ const MainMenu = (props) => {
   const mapStateToProps = (store) =>
   {
       return {
-          
+        
       };
   };
   
   const matchDispatchToProps = (dispatch) =>
   {
       return bindActionCreators({
-        
+        mainMenuStart : mainMenuStart
       }, dispatch)
   };
   

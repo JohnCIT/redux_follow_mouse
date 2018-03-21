@@ -4,10 +4,12 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 // Import reducers
 import sceneReducer from "./reducers/sceneReducer";
+import mainScreenReducer from "./reducers/mainScreenReducer";
 
 
 const reducers = combineReducers({
-    sceneReducer: sceneReducer
+    sceneReducer: sceneReducer,
+    mainScreenReducer: mainScreenReducer
 });
 
 let middleware = [thunk];
