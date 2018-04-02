@@ -6,10 +6,15 @@ import {Provider, connect} from "react-redux";
 import {bindActionCreators} from 'redux'
 
 
+const divStyle = {
+  wdith: '100%',
+  height: '100%'
+};
+
 const App = (props) =>
 {
   return (
-    <div name="MainApp">
+    <div style={divStyle} name="MainApp">
       <MainMenu />
       <Scene />
     </div>

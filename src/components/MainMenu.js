@@ -16,9 +16,7 @@ const MainMenu = (props) => {
 
     let startButtonClicked = (event) => 
     {
-        console.log("!!!! in button action");
-
-        props.mainMenuStart();
+        props.mainMenuStart("Test", props.sceneObjects);
     }
 
     return (
@@ -40,8 +38,9 @@ const MainMenu = (props) => {
   
   const mapStateToProps = (store) =>
   {
+    console.log("STORE !!!!", store.sceneReducer);
       return {
-        
+        sceneObjects: store.sceneReducer.sceneObjects
       };
   };
   

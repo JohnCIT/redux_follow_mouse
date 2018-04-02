@@ -7,21 +7,25 @@ import {connect} from 'react-redux'
  * @param {*} props 
  */
 const SceneShape = (props) => {
-  let shapeName = props.shapeName.shapeType;
+  let shapeName = props.shape.shapeType;
 
-  let x = "50";
-  let y = "20";
+console.log("!!!!!!", props);
 
   let width = "150";
   let height = "150";
+
+  const divStyle = {
+    width: '1920',
+    height: '1600'
+  };
 
     
    console.log("!!!!!!!!!!!!!!!!!!!",shapeName);
     return (
       <div id="SceneShape">
-        <svg>
-          <rect x={x} y={y} width={width} height={height} fill="green"/>
-          <text x={x} y={y} fontFamily="Verdana" fontSize="12" fill="blue">TYPE: {shapeName} </text>
+        <svg style={divStyle} >
+          <rect x={props.shape.xPos} y={props.shape.yPos} width={width} height={height} fill="green"/>
+          <text x={props.shape.xPos} y={props.shape.Ypos} fontFamily="Verdana" fontSize="12" fill="blue">TYPE: {shapeName} </text>
         </svg>
       </div>
     )
