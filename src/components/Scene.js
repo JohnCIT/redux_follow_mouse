@@ -13,6 +13,14 @@ import {sceneMouseMove, addButtonClicked} from '../actions/sceneActions'
  */
 const Scene = (props) => {
 
+
+
+  const sceneCanvasStyle = {
+    width: '1920',
+    height: '1200'
+  };
+
+
   /**
    *  * Here we will want to add scene objects to render
    */
@@ -27,8 +35,7 @@ const Scene = (props) => {
 
   let mouseMoveAction = (event) =>
   {
-    console.log("Mouse is moving", event.clientY);
-    props.sceneMouseMove(props.sceneObjects, event.clientX, event.clientY);
+    props.sceneMouseMove(props.sceneObjects, event.pageX, event.pageY);
   }
 
   let addButtonClicked = () => 
@@ -38,11 +45,13 @@ const Scene = (props) => {
 
 
     return (
-      <div className="Scene" onMouseMove={mouseMoveAction}>
+      <div id="Scene" >
          <button  onClick={addButtonClicked}>
                Add shape
         </button>
-        {renderSceneObjects}
+        <svg id="sceneCanvas" style={sceneCanvasStyle} onMouseMove={mouseMoveAction}>
+          {renderSceneObjects}
+        </svg>
       </div>
     )
   }
